@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meet the Team — E.P.i.C. Youth Ministry</title>
+  <link rel="icon" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#0A0A0A', foreground: '#FFFFFF',
+            card: '#111111', border: '#262626',
+            primary: { DEFAULT: '#D4AF37', foreground: '#0A0A0A' },
+            secondary: { DEFAULT: '#F97316', foreground: '#FFFFFF' },
+            accent: { DEFAULT: '#3B82F6', foreground: '#FFFFFF' },
+            muted: { DEFAULT: '#262626', foreground: '#A6A6A6' },
+          },
+          fontFamily: {
+            heading: ['Anton','sans-serif'],
+            subheading: ['Bebas Neue','sans-serif'],
+            sans: ['Poppins','sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .member-photo { filter: grayscale(1); transition: filter 0.5s; }
+    .flip-card:hover .member-photo { filter: grayscale(0); }
+  </style>
+</head>
+<body class="bg-background text-white font-sans flex flex-col min-h-screen">
+  <div id="nav-root"></div>
+
+  <main class="flex-grow pb-24" style="background:#0A0A0A;">
+
+    <!-- Header -->
+    <section class="py-20 relative overflow-hidden" style="background:#111; border-bottom:1px solid rgba(255,255,255,0.05);">
+      <div class="absolute pointer-events-none rounded-full" style="top:0;right:0;width:600px;height:600px;background:rgba(212,175,55,0.04);filter:blur(120px);transform:translate(33%,-50%);"></div>
+      <div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+        <h1 class="font-heading uppercase leading-none mb-6" style="font-size:clamp(3rem,8vw,5rem); letter-spacing:-0.03em;">
+          Meet The <span style="color:#D4AF37;">Team</span>
+        </h1>
+        <p class="font-sans text-xl max-w-2xl mx-auto" style="color:#a3a3a3;">
+          The passionate individuals dedicating their time and talents to empower the next generation.
+        </p>
+      </div>
+    </section>
+
+    <!-- Team Grid (filled by JS) -->
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 md:px-6">
+        <div id="team-container">
+          <!-- Loading skeleton -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+            <div class="skeleton" style="width:100%;aspect-ratio:3/4;border-radius:1rem;"></div>
+            <div class="skeleton" style="width:100%;aspect-ratio:3/4;border-radius:1rem;"></div>
+            <div class="skeleton" style="width:100%;aspect-ratio:3/4;border-radius:1rem;"></div>
+            <div class="skeleton" style="width:100%;aspect-ratio:3/4;border-radius:1rem;"></div>
+            <div class="skeleton" style="width:100%;aspect-ratio:3/4;border-radius:1rem;"></div>
+            <div class="skeleton" style="width:100%;aspect-ratio:3/4;border-radius:1rem;"></div>
+            <div class="skeleton" style="width:100%;aspect-ratio:3/4;border-radius:1rem;"></div>
+            <div class="skeleton" style="width:100%;aspect-ratio:3/4;border-radius:1rem;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join CTA -->
+    <section class="py-20 relative overflow-hidden" style="border-top:1px solid rgba(255,255,255,0.05);">
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <div class="max-w-2xl mx-auto p-10 rounded-3xl relative" style="background:#111;border:1px solid rgba(255,255,255,0.1);">
+          <div class="absolute pointer-events-none rounded-full" style="top:0;right:0;width:128px;height:128px;background:rgba(249,115,22,0.1);filter:blur(40px);"></div>
+          <h2 class="font-heading text-4xl uppercase mb-4 relative z-10" style="color:#fff;">Want to serve?</h2>
+          <p class="font-sans mb-8 relative z-10" style="color:#a3a3a3;">
+            We're always looking for passionate people to join our media, creative, and ministry teams.
+          </p>
+          <a href="/impact"
+             class="inline-flex px-8 py-3 rounded-full font-bold transition-colors relative z-10"
+             style="background:#D4AF37;color:#0A0A0A;text-decoration:none;"
+             onmouseover="this.style.background='#c09c2a'" onmouseout="this.style.background='#D4AF37'">
+            EXPLORE OPPORTUNITIES
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-root"></div>
+  <div id="toast-container"></div>
+  <script type="module" src="/js/team.js"></script>
+</body>
+</html>
