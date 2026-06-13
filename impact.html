@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E.P.i.C. Impact — E.P.i.C. Youth Ministry</title>
+  <link rel="icon" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#0A0A0A', foreground: '#FFFFFF',
+            card: '#111111', border: '#262626',
+            primary: { DEFAULT: '#D4AF37', foreground: '#0A0A0A' },
+            secondary: { DEFAULT: '#F97316', foreground: '#FFFFFF' },
+            accent: { DEFAULT: '#3B82F6', foreground: '#FFFFFF' },
+            muted: { DEFAULT: '#262626', foreground: '#A6A6A6' },
+          },
+          fontFamily: {
+            heading: ['Anton','sans-serif'],
+            subheading: ['Bebas Neue','sans-serif'],
+            sans: ['Poppins','sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    #filter-bar { scrollbar-width: none; }
+    #filter-bar::-webkit-scrollbar { display: none; }
+    .opp-card { transition: border-color 0.2s; }
+    .opp-card:hover { border-color: rgba(212,175,55,0.4) !important; }
+  </style>
+</head>
+<body class="bg-background text-white font-sans flex flex-col min-h-screen">
+  <div id="nav-root"></div>
+
+  <main class="flex-grow pb-24" style="background:#0A0A0A;">
+
+    <!-- Hero -->
+    <section class="relative flex items-center justify-center overflow-hidden" style="height:50vh; min-height:400px;">
+      <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 z-10" style="background:rgba(0,0,0,0.7);"></div>
+        <img src="/impact-bg.png" alt="Community impact" class="w-full h-full object-cover">
+      </div>
+      <div class="relative z-20 text-center px-4 hero-enter">
+        <h1 class="font-heading uppercase leading-none mb-4" style="font-size:clamp(3rem,8vw,6rem); letter-spacing:-0.03em;">
+          E.P.i.C. <span style="color:#F97316;">Impact</span>
+        </h1>
+        <p class="font-sans font-light max-w-3xl mx-auto leading-relaxed" style="color:rgba(255,255,255,0.8); font-size:clamp(1rem,2vw,1.4rem);">
+          Faith without works is dead. Discover opportunities to serve, grow, and make a difference.
+        </p>
+      </div>
+    </section>
+
+    <!-- Stats Bar (floats over hero bottom) -->
+    <div class="mx-4 rounded-xl shadow-2xl" id="stats-bar" style="background:#111; margin-top:-2.5rem; position:relative; z-index:30;">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center px-6 py-12 max-w-5xl mx-auto">
+        <div>
+          <h3 id="stat-youth" class="font-heading text-5xl" style="color:#D4AF37;">500+</h3>
+          <p class="font-sans text-xs uppercase tracking-widest mt-2" style="color:#a3a3a3;">Youth Reached</p>
+        </div>
+        <div>
+          <h3 id="stat-hours" class="font-heading text-5xl" style="color:#F97316;">1,200+</h3>
+          <p class="font-sans text-xs uppercase tracking-widest mt-2" style="color:#a3a3a3;">Hours Served</p>
+        </div>
+        <div>
+          <h3 id="stat-comm" class="font-heading text-5xl" style="color:#3B82F6;">15</h3>
+          <p class="font-sans text-xs uppercase tracking-widest mt-2" style="color:#a3a3a3;">Communities</p>
+        </div>
+        <div>
+          <h3 id="stat-roles" class="font-heading text-5xl" style="color:#fff;">24</h3>
+          <p class="font-sans text-xs uppercase tracking-widest mt-2" style="color:#a3a3a3;">Active Roles</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Opportunities Board -->
+    <section class="pt-20 pb-10 max-w-7xl mx-auto px-4 md:px-6">
+      <!-- Filters (filled by JS) -->
+      <div id="filter-bar" class="flex gap-3 overflow-x-auto pb-4 mb-12" style="scroll-behavior:smooth;"></div>
+
+      <!-- Opportunity List (filled by JS) -->
+      <div id="opp-list" class="space-y-6 max-w-4xl mx-auto">
+        <div class="skeleton" style="width:100%;height:160px;border-radius:1rem;"></div>
+        <div class="skeleton" style="width:100%;height:160px;border-radius:1rem;"></div>
+        <div class="skeleton" style="width:100%;height:160px;border-radius:1rem;"></div>
+        <div class="skeleton" style="width:100%;height:160px;border-radius:1rem;"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-root"></div>
+  <div id="toast-container"></div>
+  <script type="module" src="/js/impact.js"></script>
+</body>
+</html>
