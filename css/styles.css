@@ -1,0 +1,120 @@
+/* E.P.i.C. Youth Ministry — custom styles */
+
+/* ── Flip cards ─────────────────────────────────────── */
+.flip-card { perspective: 1000px; }
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(.4,0,.2,1);
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-card-back { transform: rotateY(180deg); }
+
+/* ── Hero entrance animation ────────────────────────── */
+@keyframes heroEnter {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-enter { animation: heroEnter 0.8s ease forwards; }
+
+/* ── Scroll-reveal ──────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal[data-delay="1"] { transition-delay: 0.1s; }
+.reveal[data-delay="2"] { transition-delay: 0.2s; }
+.reveal[data-delay="3"] { transition-delay: 0.3s; }
+.reveal[data-delay="4"] { transition-delay: 0.4s; }
+
+/* ── Toast container ────────────────────────────────── */
+#toast-container {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  pointer-events: none;
+}
+.toast {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 0.875rem;
+  padding: 1rem 1.25rem;
+  min-width: 300px;
+  max-width: 380px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  pointer-events: all;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.toast.toast-visible { opacity: 1; transform: translateY(0); }
+.toast.toast-error { border-color: #7f1d1d; }
+.toast-title { font-weight: 700; color: #fff; font-family: 'Poppins', sans-serif; margin-bottom: 0.2rem; }
+.toast-desc  { font-size: 0.875rem; color: #a3a3a3; font-family: 'Poppins', sans-serif; }
+
+/* ── Scrollbar ──────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #555; }
+
+/* ── Gradient text ──────────────────────────────────── */
+.text-gradient {
+  background: linear-gradient(90deg, #D4AF37, #f5d97a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Line clamp utilities ───────────────────────────── */
+.line-clamp-1 { overflow: hidden; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; }
+.line-clamp-2 { overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.line-clamp-3 { overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+
+/* ── Story card image hover ─────────────────────────── */
+.story-card:hover .story-img { transform: scale(1.05); }
+.story-img { transition: transform 0.5s ease; }
+
+/* ── Magazine card hover ────────────────────────────── */
+.mag-card:hover .mag-overlay { opacity: 1; }
+.mag-overlay { transition: opacity 0.3s; }
+.mag-card:hover .mag-img { transform: scale(1.05); opacity: 0.8; }
+.mag-img { transition: transform 0.7s ease, opacity 0.7s ease; }
+
+/* ── Skeleton pulse ─────────────────────────────────── */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: .4; }
+}
+.skeleton {
+  background: #1f1f1f;
+  border-radius: 0.75rem;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+/* ── Nav backdrop ───────────────────────────────────── */
+#main-nav { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+
+/* ── Impact stat bar float ──────────────────────────── */
+@media (min-width: 768px) {
+  #stats-bar { margin-top: -2.5rem; }
+}
+
+/* ── Transition helpers ─────────────────────────────── */
+.transition-fast { transition: all 0.2s ease; }
+.transition-med  { transition: all 0.3s ease; }
