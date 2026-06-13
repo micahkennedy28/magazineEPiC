@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — E.P.i.C. Youth Ministry</title>
+  <link rel="icon" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            background: '#0A0A0A', foreground: '#FFFFFF',
+            card: '#111111', border: '#262626',
+            primary: { DEFAULT: '#D4AF37', foreground: '#0A0A0A' },
+            secondary: { DEFAULT: '#F97316', foreground: '#FFFFFF' },
+            accent: { DEFAULT: '#3B82F6', foreground: '#FFFFFF' },
+            muted: { DEFAULT: '#262626', foreground: '#A6A6A6' },
+          },
+          fontFamily: {
+            heading: ['Anton','sans-serif'],
+            subheading: ['Bebas Neue','sans-serif'],
+            sans: ['Poppins','sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .form-input {
+      width: 100%; background: #0A0A0A; border: 1px solid #262626; border-radius: 0.75rem;
+      padding: 0.75rem 1rem; color: #fff; font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem; height: 3rem; outline: none; transition: border-color 0.2s;
+      box-sizing: border-box;
+    }
+    .form-input:focus { border-color: #D4AF37; }
+    .form-input.prayer-focus:focus { border-color: #F97316; }
+    .form-textarea {
+      width: 100%; background: #0A0A0A; border: 1px solid #262626; border-radius: 0.75rem;
+      padding: 0.75rem 1rem; color: #fff; font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem; min-height: 150px; resize: none; outline: none; transition: border-color 0.2s;
+      box-sizing: border-box;
+    }
+    .form-textarea:focus { border-color: #D4AF37; }
+    .form-textarea.prayer-focus:focus { border-color: #F97316; }
+    .form-label { display: block; font-family: 'Poppins', sans-serif; font-size: 0.875rem; color: rgba(255,255,255,0.7); margin-bottom: 0.4rem; }
+    .field-error { font-family: 'Poppins', sans-serif; font-size: 0.8rem; color: #f87171; margin-top: 0.25rem; display: none; }
+    .field-error.visible { display: block; }
+    input::placeholder, textarea::placeholder { color: #555; }
+    .info-icon-box { background: #111; border: 1px solid rgba(255,255,255,0.05); border-radius: 0.75rem; padding: 0.75rem; flex-shrink: 0; }
+    .social-btn { width:48px; height:48px; border-radius:0.75rem; background:#111; border:1px solid rgba(255,255,255,0.05); display:flex; align-items:center; justify-content:center; color:#fff; text-decoration:none; transition:all 0.2s; }
+    .social-btn:hover { background:#D4AF37; color:#0A0A0A; }
+  </style>
+</head>
+<body class="bg-background text-white font-sans flex flex-col min-h-screen">
+  <div id="nav-root"></div>
+
+  <main class="flex-grow" style="background:#0A0A0A;">
+
+    <!-- Header -->
+    <section class="py-20 relative overflow-hidden" style="background:#111; border-bottom:1px solid rgba(255,255,255,0.05);">
+      <div class="absolute bottom-0 left-0 w-full" style="height:4px;background:linear-gradient(to right,#D4AF37,#F97316,#3B82F6);"></div>
+      <div class="max-w-7xl mx-auto px-4 text-center">
+        <h1 class="font-heading uppercase leading-none mb-4" style="font-size:clamp(3rem,8vw,5rem); letter-spacing:-0.03em;">
+          Get In <span style="color:#D4AF37;">Touch</span>
+        </h1>
+        <p class="font-sans text-xl max-w-2xl mx-auto" style="color:#a3a3a3;">
+          Whether you have a question, a testimony, or need prayer, we're here for you.
+        </p>
+      </div>
+    </section>
+
+    <section class="py-20 max-w-7xl mx-auto px-4 md:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 max-w-6xl mx-auto">
+
+        <!-- Sidebar -->
+        <div class="lg:col-span-4 space-y-12">
+          <div>
+            <h3 class="font-heading text-3xl uppercase mb-6" style="color:#fff;">Contact Info</h3>
+            <div class="space-y-6 font-sans" style="color:#a3a3a3;">
+
+              <!-- Location -->
+              <div class="flex items-start gap-4">
+                <div class="info-icon-box" style="color:#D4AF37;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20 10c0 6-8 13-8 13s-8-7-8-13a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-1" style="color:#fff;">Our Location</h4>
+                  <p>123 Faith Avenue<br>Cityville, State 12345</p>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="flex items-start gap-4">
+                <div class="info-icon-box" style="color:#F97316;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-1" style="color:#fff;">Phone</h4>
+                  <p>(555) 123-4567</p>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div class="flex items-start gap-4">
+                <div class="info-icon-box" style="color:#3B82F6;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-bold mb-1" style="color:#fff;">Email</h4>
+                  <p>hello@epicministry.org</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-heading text-3xl uppercase mb-6" style="color:#fff;">Follow Us</h3>
+            <div class="flex gap-4">
+              <a href="#" aria-label="Instagram" class="social-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                </svg>
+              </a>
+              <a href="#" aria-label="Twitter" class="social-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
+                </svg>
+              </a>
+              <a href="#" aria-label="YouTube" class="social-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><polygon points="10 15 15 12 10 9"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Area -->
+        <div class="lg:col-span-8 p-6 md:p-10 rounded-3xl relative overflow-hidden" style="background:#111; border:1px solid rgba(255,255,255,0.05);">
+          <div class="absolute pointer-events-none rounded-full" style="top:0;right:0;width:256px;height:256px;background:rgba(212,175,55,0.04);filter:blur(80px);"></div>
+
+          <!-- Toggle -->
+          <div class="flex flex-wrap gap-6 mb-10 pb-6" style="border-bottom:1px solid rgba(255,255,255,0.1);">
+            <button id="tab-contact" class="font-heading text-2xl uppercase transition-colors flex items-center gap-2" style="color:#fff;background:none;border:none;cursor:pointer;padding:0;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#D4AF37" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" x2="11" y1="2" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              General Inquiry
+            </button>
+            <button id="tab-prayer" class="font-heading text-2xl uppercase transition-colors flex items-center gap-2" style="color:rgba(255,255,255,0.3);background:none;border:none;cursor:pointer;padding:0;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              Prayer Request
+            </button>
+          </div>
+
+          <!-- Contact Form -->
+          <div id="form-contact">
+            <form id="contact-form" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="form-label" for="c-name">Full Name *</label>
+                  <input id="c-name" name="name" type="text" placeholder="John Doe" class="form-input">
+                  <div class="field-error" id="c-name-err">Name is required (min 2 chars)</div>
+                </div>
+                <div>
+                  <label class="form-label" for="c-email">Email Address *</label>
+                  <input id="c-email" name="email" type="email" placeholder="john@example.com" class="form-input">
+                  <div class="field-error" id="c-email-err">Valid email is required</div>
+                </div>
+              </div>
+              <div>
+                <label class="form-label" for="c-subject">Subject</label>
+                <input id="c-subject" name="subject" type="text" placeholder="How can we help?" class="form-input">
+              </div>
+              <div>
+                <label class="form-label" for="c-message">Message *</label>
+                <textarea id="c-message" name="message" placeholder="Type your message here..." class="form-textarea"></textarea>
+                <div class="field-error" id="c-message-err">Message must be at least 10 characters</div>
+              </div>
+              <button type="submit" id="c-submit"
+                      class="px-10 h-14 rounded-full font-bold font-sans transition-colors"
+                      style="background:#D4AF37;color:#0A0A0A;border:none;cursor:pointer;"
+                      onmouseover="this.style.background='#c09c2a'" onmouseout="this.style.background='#D4AF37'">
+                SEND MESSAGE
+              </button>
+            </form>
+          </div>
+
+          <!-- Prayer Form -->
+          <div id="form-prayer" class="hidden">
+            <div class="rounded-xl p-4 mb-6 flex items-start gap-3" style="background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.2);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;margin-top:2px;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              <p class="font-sans text-sm" style="color:rgba(255,255,255,0.8);">
+                "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God." — Philippians 4:6
+              </p>
+            </div>
+
+            <form id="prayer-form" class="space-y-6">
+              <!-- Anonymous toggle -->
+              <div class="flex items-start gap-3 p-4 rounded-md" style="border:1px solid rgba(255,255,255,0.05);background:#0A0A0A;">
+                <div style="position:relative;margin-top:2px;">
+                  <input type="checkbox" id="p-anon" style="position:absolute;opacity:0;width:0;height:0;">
+                  <div id="p-anon-box" onclick="document.getElementById('p-anon').click()"
+                       style="width:20px;height:20px;border-radius:4px;border:1px solid rgba(255,255,255,0.2);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;">
+                  </div>
+                </div>
+                <div>
+                  <label for="p-anon" class="font-sans font-medium" style="color:#fff;cursor:pointer;display:block;">Submit Anonymously</label>
+                  <p class="font-sans text-sm mt-1" style="color:#a3a3a3;">We won't store your name or email with this request.</p>
+                </div>
+              </div>
+
+              <div id="p-identity" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="form-label" for="p-name">Name (First name is fine)</label>
+                  <input id="p-name" name="name" type="text" placeholder="Your name" class="form-input prayer-focus">
+                  <div class="field-error" id="p-name-err">Name is required</div>
+                </div>
+                <div>
+                  <label class="form-label" for="p-email">Email (Optional)</label>
+                  <input id="p-email" name="email" type="email" placeholder="For follow-up support" class="form-input prayer-focus">
+                  <div class="field-error" id="p-email-err">Please enter a valid email</div>
+                </div>
+              </div>
+
+              <div>
+                <label class="form-label" for="p-request">Your Prayer Request *</label>
+                <textarea id="p-request" name="request" placeholder="How can we pray for you?" class="form-textarea prayer-focus"></textarea>
+                <div class="field-error" id="p-request-err">Prayer request must be at least 5 characters</div>
+              </div>
+
+              <button type="submit" id="p-submit"
+                      class="px-10 h-14 rounded-full font-bold font-sans transition-colors"
+                      style="background:#F97316;color:#fff;border:none;cursor:pointer;"
+                      onmouseover="this.style.background='#ea6c10'" onmouseout="this.style.background='#F97316'">
+                SUBMIT PRAYER REQUEST
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-root"></div>
+  <div id="toast-container"></div>
+  <script type="module" src="/js/contact.js"></script>
+</body>
+</html>
