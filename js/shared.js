@@ -1,12 +1,12 @@
 /* ── Shared: nav, footer, toast, animations ─── */
 
 const NAV_LINKS = [
-  { name: 'Home',     href: '/',        id: 'home'     },
-  { name: 'About',    href: '/about',   id: 'about'    },
-  { name: 'Team',     href: '/team',    id: 'team'     },
-  { name: 'Magazine', href: '/magazine',id: 'magazine' },
-  { name: 'Impact',   href: '/impact',  id: 'impact'   },
-  { name: 'Contact',  href: '/contact', id: 'contact'  },
+  { name: 'Home',     href: 'index.html',    id: 'home'     },
+  { name: 'About',    href: 'about.html',    id: 'about'    },
+  { name: 'Team',     href: 'team.html',     id: 'team'     },
+  { name: 'Magazine', href: 'magazine.html', id: 'magazine' },
+  { name: 'Impact',   href: 'impact.html',   id: 'impact'   },
+  { name: 'Contact',  href: 'contact.html',  id: 'contact'  },
 ];
 
 export function renderNav(activePage) {
@@ -18,24 +18,24 @@ export function renderNav(activePage) {
       <div class="max-w-7xl mx-auto px-4 md:px-6">
         <div class="flex items-center justify-between h-20">
 
-          <a href="/" class="flex items-center gap-3 flex-shrink-0">
-            <img src="/assets/logo.png" alt="E.P.i.C. Logo" class="h-12 w-auto object-contain"
+          <a href="index.html" class="flex items-center gap-3 flex-shrink-0">
+                    <img src="assets/logo.png" alt="E.P.i.C. Logo" class="h-12 w-auto object-contain"
                  onerror="this.style.display='none'">
             <span class="font-heading text-2xl tracking-wider hidden sm:block mt-1" style="color:#D4AF37;font-family:'Anton',sans-serif;">E.P.i.C.</span>
           </a>
 
           <div class="hidden md:flex items-center space-x-6">
-            ${NAV_LINKS.map(l => `
-              <a href="${l.href}"
-                 class="px-3 py-2 rounded-md text-sm font-medium transition-colors"
-                 style="font-family:'Poppins',sans-serif; color:${activePage === l.id ? '#D4AF37' : '#fff'};"
-                 onmouseover="this.style.color='#D4AF37'"
-                 onmouseout="this.style.color='${activePage === l.id ? '#D4AF37' : '#fff'}'"
-              >${l.name}</a>
-            `).join('')}
+              ${NAV_LINKS.map(l => `
+                  <a href="${l.href}"
+                    class="px-3 py-2 rounded-md text-sm font-medium transition-colors"
+                    style="font-family:'Poppins',sans-serif; color:${activePage === l.id ? '#D4AF37' : '#fff'};"
+                    onmouseover="this.style.color='#D4AF37'"
+                    onmouseout="this.style.color='${activePage === l.id ? '#D4AF37' : '#fff'}'"
+                  >${l.name}</a>
+                `).join('')}
           </div>
 
-          <a href="/magazine"
+            <a href="magazine.html"
              class="hidden md:inline-flex items-center px-6 py-2 rounded-full text-sm font-bold tracking-wide transition-colors"
              style="background:#D4AF37;color:#0A0A0A;font-family:'Poppins',sans-serif;"
              onmouseover="this.style.background='#c09c2a'"
@@ -65,12 +65,12 @@ export function renderNav(activePage) {
                style="font-family:'Poppins',sans-serif; color:${activePage === l.id ? '#D4AF37' : '#fff'}; background:${activePage === l.id ? 'rgba(212,175,55,0.1)' : 'transparent'};"
             >${l.name}</a>
           `).join('')}
-          <div class="pt-3 px-3">
-            <a href="/magazine"
-               class="block w-full text-center px-4 py-2 rounded-full font-bold transition-colors"
-               style="background:#D4AF37;color:#0A0A0A;font-family:'Poppins',sans-serif;"
-            >READ LATEST ISSUE</a>
-          </div>
+              <div class="pt-3 px-3">
+                <a href="magazine.html"
+                   class="block w-full text-center px-4 py-2 rounded-full font-bold transition-colors"
+                   style="background:#D4AF37;color:#0A0A0A;font-family:'Poppins',sans-serif;"
+                >READ LATEST ISSUE</a>
+              </div>
         </div>
       </div>
     </nav>
@@ -100,9 +100,9 @@ export function renderFooter() {
         <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
 
           <div>
-            <a href="/" class="flex items-center gap-3 mb-5">
-              <img src="/assets/logo.png" alt="E.P.i.C. Logo" class="h-16 w-auto object-contain"
-                   onerror="this.style.display='none'">
+                <a href="index.html" class="flex items-center gap-3 mb-5">
+                <img src="assets/logo.png" alt="E.P.i.C. Logo" class="h-16 w-auto object-contain"
+                  onerror="this.style.display='none'">
             </a>
             <p style="font-family:'Poppins',sans-serif; font-size:0.875rem; color:#a3a3a3; line-height:1.6; max-width:240px;">
               Everything Possible in Christ. A generation of believers passionate about faith, creativity, community, and purpose.
@@ -112,7 +112,7 @@ export function renderFooter() {
           <div>
             <h4 style="font-family:'Anton',sans-serif; font-size:1.25rem; color:#fff; margin-bottom:1.5rem; letter-spacing:0.05em;">EXPLORE</h4>
             <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.75rem; font-family:'Poppins',sans-serif; font-size:0.875rem; color:#a3a3a3;">
-              ${[['About Us','/about'],['Magazine Archive','/magazine'],['Meet the Team','/team'],['E.P.i.C. Impact','/impact']].map(([n,h])=>`
+              ${[['About Us','about.html'],['Magazine Archive','magazine.html'],['Meet the Team','team.html'],['E.P.i.C. Impact','impact.html']].map(([n,h])=>`
                 <li><a href="${h}" style="color:#a3a3a3; text-decoration:none; transition:color 0.2s;"
                         onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#a3a3a3'">${n}</a></li>
               `).join('')}
@@ -122,7 +122,7 @@ export function renderFooter() {
           <div>
             <h4 style="font-family:'Anton',sans-serif; font-size:1.25rem; color:#fff; margin-bottom:1.5rem; letter-spacing:0.05em;">CONNECT</h4>
             <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.75rem; font-family:'Poppins',sans-serif; font-size:0.875rem; color:#a3a3a3;">
-              ${[['Contact Us','/contact'],['Prayer Requests','/contact'],['Donate','#']].map(([n,h])=>`
+              ${[['Contact Us','contact.html'],['Prayer Requests','contact.html'],['Donate','#']].map(([n,h])=>`
                 <li><a href="${h}" style="color:#a3a3a3; text-decoration:none; transition:color 0.2s;"
                         onmouseover="this.style.color='#D4AF37'" onmouseout="this.style.color='#a3a3a3'">${n}</a></li>
               `).join('')}
